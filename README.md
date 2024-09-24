@@ -26,7 +26,11 @@ git clone https://github.com/LinG24/SaHaNet.git
 cd SaHaNet
 pip install -r requirements.txt
 bash scripts/auto_build.sh
+```
 ## Start
 ```
-python train_net.py --config-file configs\Thyroid-Segmentation\saha_sampling.json
+python train_net.py --config-file configs/Thyroid-Segmentation/saha_training.json
+bash scripts/auto_run.sh $CONFIG  # your config
+python train_net.py --config-file configs/Thyroid-Segmentation/saha_seg.json --eval-only MODEL.WEIGHTS ${mine/new_command/data16t/baseline/saved_model/saha21_seg.pth}
 ```
+
